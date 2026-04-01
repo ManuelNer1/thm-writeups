@@ -96,7 +96,7 @@ This gives us two key pieces of information:
 
 #### HTTP
 
-![image.png](Simple%20CTF/image.png)
+![image.png](../Simple-CTF/assets/image.png)
 
 Inspecting port 80 reveals only the default Apache page, which contains no visible relevant information. However, this does not rule out the existence of hidden directories, so the next step is directory enumeration.
 
@@ -131,7 +131,7 @@ simple                  [Status: 301, Size: 315, Words: 20, Lines: 10, Duration:
 
 Running ffuf for directory enumeration reveals the existence of the `/simple` directory, which is worth inspecting as it may contain an application or administration panel.
 
-![image.png](Simple%20CTF/image%201.png)
+![image.png](../Simple-CTF/assets/image%201.png)
 
 Inspecting the `/simple` directory reveals a **CMS Made Simple version 2.2.8**. This allows us to identify it as vulnerable to **SQL Injection (CVE-2019-9053)**, a known vulnerability affecting all versions prior to 2.2.10 that allows extracting information from the database such as usernames and passwords.
 
